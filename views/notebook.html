@@ -9,6 +9,14 @@
     <link rel="stylesheet" media="(max-width:650px)" href="main2.css">
     <script src="notebookJS.js"></script>
 
+    <script>
+      var i;
+      for (i=0;i<$array.length;i++){
+        var hmtl = document.getElementById("boxcards");
+        html.innerHTML += "<div class='card'><img src='doc_placeholder.png' alt=image class=macimage><p>" + $array[i] + "</p></div>";
+      }
+    </script>
+
 </head>
 <body>
     <div class="navbar">
@@ -34,66 +42,43 @@
         <label for="newdoc"> </label><br></p>
 </div>
 
-<div class="cardsbox">
+<div class="cardsbox" id="boxcards">
   <h3>Recent Documents</h3>
-  
-      <div class="card">
-            <img src="doc_placeholder.png" alt="image" class="macimage">
-            
-            <p>Document 1</p>
-            
-           
-            
-        </div>
+  <!-- <div class="card">
+    <img src="doc_placeholder.png" alt="image" class="macimage">
+    <p>Document 1</p>
+  </div>
 
-        <div class="card">
-                <img src="doc_placeholder.png" alt="image" class="macimage">
-               
-                <p>Document 2</p>
-                
-                
-        </div>
+  <div class="card">
+    <img src="doc_placeholder.png" alt="image" class="macimage">
+    <p>Document 2</p>
+  </div>
 
-        <div class="card">
-                    <img src="doc_placeholder.png" alt="image" class="macimage">
-                   
-                    <p>Document 3</p>
-                    
-                   
-        </div>
+  <div class="card">
+    <img src="doc_placeholder.png" alt="image" class="macimage">
+    <p>Document 3</p>       
+  </div>
 
-        <div class="card">
-                        <img src="doc_placeholder.png" alt="image" class="macimage">
-                       
-                        <p>Document 4</p>
-            
-                     
-        </div>
-         <div class="card">
-                        <img src="doc_placeholder.png" alt="image" class="macimage">
-                       
-                        <p>Document 5</p>
-            
-                      
-         </div>
-         <div class="card">
-          <img src="doc_placeholder.png" alt="image" class="macimage">
-         
-          <p>Document 6</p>
+  <div class="card">
+    <img src="doc_placeholder.png" alt="image" class="macimage">
+    <p>Document 4</p>     
+  </div>
 
-        
-          </div>
-          <div class="card">
-            <img src="doc_placeholder.png" alt="image" class="macimage">
-           
-            <p>Document 7</p>
-  
-          
-            </div>
+  <div class="card">
+    <img src="doc_placeholder.png" alt="image" class="macimage">
+    <p>Document 5</p>      
+  </div>
 
-         
-       
-        </div>
+  <div class="card">
+    <img src="doc_placeholder.png" alt="image" class="macimage">
+    <p>Document 6</p>
+  </div>
+
+  <div class="card">
+    <img src="doc_placeholder.png" alt="image" class="macimage">
+    <p>Document 7</p>
+  </div> -->
+</div>
 
  
 </div>
