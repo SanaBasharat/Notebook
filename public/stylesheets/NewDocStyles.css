@@ -1,0 +1,299 @@
+body{
+    display: inline;
+}
+
+/* Style the header with a grey background and some padding */
+.editor-toolbar{
+    overflow: hidden;
+    background-color: #f1f1f1;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 35;
+    width: 100%; /* Full width */
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    position: fixed; /*Set the navbar to fixed position*/
+    bottom: 0;
+    width: 100%; /* Full width */
+    padding-right: 20px;
+    height: 5%;
+}
+
+.editor-toolbar a{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footer a{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.editor-toolbar a:hover {
+    background-color: #ddd;
+    color: black;
+    
+}
+  
+.editor-toolbar a.active {
+    background-color: darkturquoise;
+    color: white;
+    
+}
+
+.editor-toolbar-left{
+    float: left;
+    padding-left: 20%;
+}
+
+.footer-left{
+    float: left;
+}
+.footer-right{
+    float: right;
+}
+
+.both-headers {
+    display: block;
+    float: bottom;
+    width: 100%;
+    /* margin-bottom: 50px; */
+}
+
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+    .navbar .dropdown{
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .editor-toolbar a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .editor-toolbar{
+        top: 140;
+    }
+    .editor-toolbar-left {
+        float: none;
+    }
+}
+
+.editor-body{
+    background-color: #abf3f5;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 75px;
+    margin-bottom: 37px;
+}
+
+.workspace{
+    background-color: white;
+    border-color: darkturquoise;
+    border-style: solid;
+    box-shadow: 3px 3px 3px 3px lightslategray;
+    border-width: 2px;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    padding-top: 40px;    /*this is the text margin*/
+    padding-bottom: 40px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+select:active select:hover select:focus{
+    background-color: black !important;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    outline-color: red !important;
+    box-shadow: 0 0 10px 100px #fff inset;
+}
+
+select option:hover{
+    background-color: black !important;
+    box-shadow: transparent;
+}
+
+select option:focus{
+    background-color: black !important;
+    box-shadow: transparent;
+}
+
+select option#red{
+    background-color: red;
+}
+select option#blue{
+    background-color: blue;
+}
+select option#yellow{
+    background-color: yellow;
+}
+select option#green{
+    background-color: green;
+}
+select option#pink{
+    background-color: palevioletred;
+}
+select option#purple{
+    background-color: purple;
+}
+select option#black{
+    background-color: black;
+}
+select option#white{
+    background-color: white;
+}
+
+button:hover {
+    background-color: darkturquoise;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+input#font-size{
+    width: 40px;
+}
+  
+.editor-toolbar-left select, input, .btn1{
+    margin-left: 40px;
+}
+
+/* Navbar container */
+.navbar {
+    background-color: #f1f1f1;
+    font-family: Arial;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    padding-left: 20%;
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+    border-bottom-width: 1px;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 14px;
+    color: black;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: darkturquoise;
+    padding: 10px 30px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: darkturquoise;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: darkturquoise;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+#document-text{
+    margin-left: 50px;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+textarea{
+    border-style: none;
+    border-color: transparent;
+    overflow: auto;
+    outline: none; 
+    width: 100%;
+    height: 100%;
+    resize: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+textarea:active{
+    border-style: none;
+    border-color: Transparent;
+    overflow: auto;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+}
