@@ -5,26 +5,40 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>NOTEBOOK</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' media="(min-width:651px)"  href='main.css'>
-    <link rel="stylesheet" media="(max-width:650px)" href="main2.css">
-    <script src="notebookJS.js"></script>
+    <link rel='stylesheet' media="(min-width:651px)"  href='/stylesheets/main.css'>
+    <link rel="stylesheet" media="(max-width:650px)" href="/stylesheets/main2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/javascript/notebookJS.js"></script>
 
-    <script>
-      var i;
-      for (i=0;i<$array.length;i++){
-        var hmtl = document.getElementById("boxcards");
-        html.innerHTML += "<div class='card'><img src='doc_placeholder.png' alt=image class=macimage><p>" + $array[i] + "</p></div>";
-      }
+    <script type="text/javascript">
+      console.log("PLS");
+      $(document).ready(() => {
+        $.ajax({
+            url: '/notebook.html',
+            type: 'POST',
+            dataType: 'html',
+            complete: function(data) {
+                console.log(data);
+            }
+        })
+      })
+      // $(document).ready(function(){
+      //   $.ajax({ url: "./views/notebook.html",
+      //           context: document.body,
+      //           success: function(){
+      //             alert("done");
+      //           }});
+      //   });
     </script>
 
 </head>
 <body>
     <div class="navbar">
        
-        <img class="nb" src="logo_transparent.png" alt="NOTEBOOK">
+        <img class="nb" src="/images/logo_transparent.png" alt="NOTEBOOK">
         <input type="text" placeholder="Search..">
-        <img class="profile" src="./img_avatar.png" alt="Avatar">
-        <div class="name">Mr. XYZ</div>
+        <img class="profile" src="/images/img_avatar.png" alt="Avatar">
+        <a class="name" href="/dashboard"><!--Email--></a>
       </div>
 
 
@@ -37,13 +51,16 @@
 
 <div class="sidebar">
    
-  <img src="new_doc.png" alt="image" class="macimage">
-        <input type="newdoc" id="newdoc" name="newdoc" value="New Document" onclick="redirect()">
+  <img src="/images/new_doc.png" alt="image" class="macimage">
+    <form class="form" action="/notebook">
+    
+        <button type="submit" id="newdoc" name="newdocc">New Document</button>
         <label for="newdoc"> </label><br></p>
+      </form>
 </div>
 
 <div class="cardsbox" id="boxcards">
-  <h3>Recent Documents</h3>
+  <h3 onload="what()">Recent Documents</h3>
   <!-- <div class="card">
     <img src="doc_placeholder.png" alt="image" class="macimage">
     <p>Document 1</p>

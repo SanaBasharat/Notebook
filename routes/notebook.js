@@ -1,20 +1,38 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-    //maryam will get data from database
-    // results -> JSON object containing the data from sql database
-  res.render('notebook', {name: ["doc1", "doc2", "doc3", "doc4"]});
-  
+  console.log("i am at notebook");
+  //if (req.session.loggedIn) {
+    //res.redirect('/notebook');
+    //res.render('notebook');
+  //}
+  //try{
+    var filePath = "./views/notebook.html";
+    fs.readFile(filePath, (err, contents) => {
+      console.log("aaa");
+        if (err) {
+            next(err);
+            return;;
+        }
+        HTMLrender = contents.toString().replace(/<!--Email-->/g, "Sana");
+        res.send(HTMLrender);
+        //res.end();
+    });
+  // }
+  // catch (err) {
+  //   next(err);
+  //   return;;
+  // }
 });
 
-router.get('/opendocument', function(req, res, next) {
+// router.get('/newdoc', function(req, res, next) {
+//   console.log("i iz tiredd");
+//   console.log(req.query);
+//   res.render('newdoc', results);
+//   res.end();
+// });
 
-    //maryam will get data from database of the specific document using the name of doucment on the query
-    // results -> JSON object conatinung the data from sql database
-  res.render('notebook', results);
-  
-});
 module.exports = router;

@@ -12,17 +12,17 @@
         </div>
         <div class="both_forms">
             <div class="sign-up">               
-                <form class="form" action="/signup">
+                <form class="form" action="/signupverify" method="POST">
                     <div class="form_field">
-                        <input type="text" name="Username" placeholder="<%=name%>" class="form_input" />
+                        <input type="text" name="username" placeholder="<%=name%>" class="form_input" />
                     </div>
                     
                     <div class="form_field">
-                        <input type="email" name="Email" placeholder="Email" class="form_input" />
+                        <input type="email" name="email" placeholder="Email" class="form_input" />
                     </div>
                     
                     <div class="form_field">
-                        <input type="password" name="Password" placeholder="Password" class="form_input" />
+                        <input type="password" name="password" placeholder="Password" class="form_input" />
                     </div>
                     
                     <button class="btn" type="submit" >Sign Up</button>

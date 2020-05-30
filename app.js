@@ -3,9 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var sql = require('mssql');
+//var MemoryStore = require('memorystore')(session)
 
 var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
+var notebookRouter = require('./routes/notebook');
+var newdocRouter = require ('./routes/newdoc');
 
 var app = express();
 
@@ -24,6 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/signup', signupRouter);
+app.use('/notebook', notebookRouter);
+//app.use('/newdoc', newdocRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,5 +47,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.send(err);
 });
+
+app.use(session({secret: "blah", resave: true, saveUninitialized: true}));
 
 module.exports = app;
