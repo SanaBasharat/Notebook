@@ -11,24 +11,22 @@
     <script src="/javascript/notebookJS.js"></script>
 
     <script type="text/javascript">
-      console.log("PLS");
-      $(document).ready(() => {
-        $.ajax({
-            url: '/notebook.html',
-            type: 'POST',
-            dataType: 'html',
-            complete: function(data) {
-                console.log(data);
-            }
-        })
-      })
-      // $(document).ready(function(){
-      //   $.ajax({ url: "./views/notebook.html",
-      //           context: document.body,
-      //           success: function(){
-      //             alert("done");
-      //           }});
-      //   });
+      
+      function populate(){
+        console.log("PLS");
+        var i = document.createElement("div");
+        
+      }
+      // $(document).ready(() => {
+      //   $.ajax({
+      //       url: '/notebook.html',
+      //       type: 'POST',
+      //       dataType: 'html',
+      //       complete: function(data) {
+      //           console.log(data);
+      //       }
+      //   })
+      // })
     </script>
 
 </head>
@@ -52,7 +50,7 @@
 <div class="sidebar">
    
   <img src="/images/new_doc.png" alt="image" class="macimage">
-    <form class="form" action="/notebook">
+    <form class="form" action="/notebook/redirectnewdoc" method="POST">
     
         <button type="submit" id="newdoc" name="newdocc">New Document</button>
         <label for="newdoc"> </label><br></p>
