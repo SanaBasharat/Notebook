@@ -1,21 +1,13 @@
-const mongoose = require("mongoose");
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Maryam:maryam123@cluster0-4elge.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology : true });
 
+client.connect(err => {
+  const collection = client.db("notebook").collection("users");
+  // perform actions on the collection object
+  console.log("mongo db connected");
+  client.close();
+});
 
-const connectdb = async () => {
-try{
-  await mongoose.connect("mongodb+srv://Maryam:<maryam123>@cluster0-4elge.mongodb.net/test?retryWrites=true&w=majority",{
-    useNewUrlParser: true,
-    useUnifiedTopology:true,
-    useCreateIndex:true
-}
+module.exports = MongoClient;
 
-  );
-  Console.log("mongo db connected");
-}
-catch (err){
-  console.log(err.message);
-  process.exit(1);
-}
-module.exports = connectdb;
-
-}
