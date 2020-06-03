@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
-const db = require('../db.js');
+const user = require('../users.js');
 var fs = require('fs');
 //var MongoClient = require ("mongodb").MongoClient;
 //var connection = 'mongodb://localhost:27017/';
