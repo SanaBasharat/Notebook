@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
-//const poolPromise = require('../db.js');
+const db = require('../db.js');
 var fs = require('fs');
-//var mysql = require('mysql');
-var MongoClient = require ("mongodb").MongoClient;
-var connection = 'mongodb://localhost:27017/';
+//var MongoClient = require ("mongodb").MongoClient;
+//var connection = 'mongodb://localhost:27017/';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
