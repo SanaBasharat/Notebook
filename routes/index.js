@@ -1,10 +1,23 @@
 var express = require('express');
 var router = express.Router();
-var session = require('express-session');
-const user = require('../users.js');
+var sql = require('mssql');
+const connectdb = require('../db');
+const user = require('../users');
+
+
+async function adduserinnewindb(n,p,e) {
+
+
+  await user.create({ Name: n, Password: p, Email: e, documents:['Untitled doc']});
+
+
+}
+
+
+//var Engine = require('./engine');
 var fs = require('fs');
-//var MongoClient = require ("mongodb").MongoClient;
-//var connection = 'mongodb://localhost:27017/';
+var mysql = require('mysql');
+//var Index = new Engine.Index();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,45 +25,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/signupverify', async function(req, res, next) {
-    console.log("redirected to notebook");
-    var username = req.body.username;
-    var email = req.body.email;
-    var password = req.body.password;
-    var verified = false;
-    var uname, em, pass, found;
+  console.log("redirected to notebook");
+  var username = req.body.username;
+  var email = req.body.email;
+  var password = req.body.password;
+  var verified = false;
 
-    req.session.username = username;
-    req.session.loggedIn = true;
-    req.session.email = email;
-    req.session.password = password;
-  //add to DB
-    try{
-    res.redirect("/notebook");
-    }
-    catch (err) {
-        console.log(err);
-        next(err);
-        return;;
-    }
-});
+  adduserinnewindb(username,password,email);
 
-router.post('/loginverify', async function(req, res, next) {
-    console.log("redirected to notebook");
-    var username = req.body.username;
-    var email = req.body.email;
-    var password = req.body.password;
-    var verified = false;
-    var uname, em, pass, found;
-  
-    //read from DB
-    try{
-        res.redirect("/notebook");
-        }
-        catch (err) {
-            console.log(err);
-            next(err);
-            return;;
-    }
-});
+ });
 
 module.exports = router;
+
