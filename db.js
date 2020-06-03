@@ -1,13 +1,27 @@
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require ('mongoose');
 const uri = "mongodb+srv://Maryam:maryam123@cluster0-4elge.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology : true });
 
-client.connect(err => {
-  const collection = client.db("notebook").collection("users");
-  // perform actions on the collection object
-  console.log("mongo db connected");
-  client.close();
-});
+async function connectdb  () {
+try{
+await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+console.log("db connected");
 
-module.exports = MongoClient;
+await  listDatabases(client); 
 
+}catch(err){
+  console.log("error message");
+  process.exit(1);
+}
+
+};
+
+
+async function listDatabases(client){
+  databasesList = await client.db().admin().listDatabases();
+
+  console.log("Databases:");
+  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+};
+
+
+module.exports = connectdb;
