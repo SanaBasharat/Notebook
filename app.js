@@ -8,7 +8,6 @@ var sql = require('mssql');
 var bodyParser = require('body-parser');
 var compression = require('compression');
 //var MemoryStore = require('memorystore')(session)
-const {MongoClient} = require('mongodb');
 
 var indexRouter = require('./routes/index');
 var notebookRouter = require('./routes/notebook');
