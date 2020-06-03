@@ -7,10 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('notepad:server');
 var http = require('http');
+const connectdb = require ('../db');
 
 /**
  * Get port from environment and store in Express.
  */
+connectdb();
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
