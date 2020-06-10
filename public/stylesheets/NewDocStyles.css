@@ -101,6 +101,20 @@ body{
     }
 }
 
+.documentcontent{
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+}
+
 .editor-body{
     background-color: #abf3f5;
     width: 100%;
@@ -211,6 +225,19 @@ input#font-size{
     text-decoration: none;
   }
   
+  .filename{
+    float: left;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 10px 30px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+    font-size: 15px;
+    border: none;
+    outline: none;
+    color: black;
+  }
   /* The dropdown container */
   .dropdown {
     float: left;
@@ -231,7 +258,7 @@ input#font-size{
     margin: 0; /* Important for vertical align on mobile phones */
   }
   
-  /* Add a red background color to navbar links on hover */
+  /* Add a background color to navbar links on hover */
   .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: darkturquoise;
   }
@@ -276,20 +303,20 @@ input#font-size{
     border: none;
 }
 
-textarea{
+div .dropdown-content{
     border-style: none;
     border-color: transparent;
     overflow: auto;
     outline: none; 
-    width: 100%;
-    height: 100%;
+    width: inherit;
+    height: inherit;
     resize: none;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     letter-spacing: 2px;
 }
 
-textarea:active{
+div .dropdown-content:active{
     border-style: none;
     border-color: Transparent;
     overflow: auto;
@@ -297,3 +324,4 @@ textarea:active{
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px;
 }
+

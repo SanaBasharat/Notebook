@@ -12,7 +12,7 @@ const connectdb = require ('../db');
 /**
  * Get port from environment and store in Express.
  */
-connectdb();
+//connectdb();
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);

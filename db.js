@@ -1,27 +1,25 @@
-const mongoose = require ('mongoose');
-const uri = "mongodb+srv://Maryam:maryam123@cluster0-yn5cn.mongodb.net/test?retryWrites=true&w=majority";
+var sql=require('mssql');
 
-async function connectdb  () {
-try{
-await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-console.log("db connected");
 
-await  listDatabases(client); 
-
-}catch(err){
-  console.log("error message");
-  process.exit(1);
-}
-
+const SqlConfig = {
+  user:'DB_A62A3A_NoteBook_admin',
+  password:'123456book',
+  server: 'sql5059.site4now.net',
+  database: 'DB_A62A3A_NoteBook',
+  options:{
+      "enableArithAbort": true
+  }
 };
 
 
-async function listDatabases(client){
-  databasesList = await client.db().admin().listDatabases();
+const poolPromise = new sql.ConnectionPool(SqlConfig)
+  .connect()
+  .then(pool => {
+    console.log('Connected to MSSQL')
+    return pool
+  })
+  .catch(err => console.log('Database Connection Failed! Bad Config: ', err))
 
-  console.log("Databases:");
-  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
 
+module.exports = poolPromise
 
-module.exports = connectdb;

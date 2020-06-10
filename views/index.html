@@ -30,16 +30,16 @@
             </div>
 
             <div class="sign-in">
-                <form class="form">
+                <form class="form" action="/loginverify" method="POST">
                     <div class="form_field">
-                        <input type="email" placeholder="Email" class="form_input" />
+                        <input type="email" name="email" placeholder="Email" class="form_input" />
                     </div>
                     
                     <div class="form_field">
-                        <input type="password" placeholder="Password" class="form_input" />
+                        <input type="password" name="password" placeholder="Password" class="form_input" />
                     </div>
                     
-                    <button class="btn" type="button" onclick="redirect()">Sign In</button>
+                    <button class="btn" type="submit">Log In</button>
                 </form>
             </div>
         </div>
