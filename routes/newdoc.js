@@ -28,9 +28,11 @@ router.get('/savefile/:name/:id', async function(req, res, next) {
         }
         console.log(num);
         findInDB = await pool.query("insert into files values ("+num+",'"+req.params.name+"','/images/doc_placeholder.png','"+req.params.id+"')");
+        findInDB = await pool.query("insert into userfiles values ("+num+",'"+req.session.email+"')");
     }
     else{
         var results = await pool.query("update files set filedata='"+req.params.id+"' where nameOfFile='"+req.params.name+"'");
+        results = await pool.query("insert into userfiles values ("+num+",'"+req.session.email+"')");
         if (results.rowsAffected==1){
             console.log("Success!");
         }

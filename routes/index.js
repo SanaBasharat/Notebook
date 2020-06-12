@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
-const user = require('../users.js');
+// const user = require('../users.js');
 var fs = require('fs');
 const poolPromise = require('../db.js');
 
