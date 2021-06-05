@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="indexStyles.css">
+        <script src="indexJS.js"></script>
+    </head>
+    <body>
+
+        <div class="header_logo">
+            <img src="logo_transparent.png" alt="" />
+            <h1 class="user__title">Sign up to start creating or Sign in to take up where you left off...</h1>
+        </div>
+        <div class="both_forms">
+            <div class="sign-up">               
+                <form class="form">
+                    <div class="form_field">
+                        <input type="text" placeholder="Username" class="form_input" />
+                    </div>
+                    
+                    <div class="form_field">
+                        <input type="email" placeholder="Email" class="form_input" />
+                    </div>
+                    
+                    <div class="form_field">
+                        <input type="password" placeholder="Password" class="form_input" />
+                    </div>
+                    
+                    <button class="btn" type="button" onclick="redirect()">Sign Up</button>
+                </form>
+            </div>
+
+            <div class="sign-in">
+                <form class="form">
+                    <div class="form_field">
+                        <input type="email" placeholder="Email" class="form_input" />
+                    </div>
+                    
+                    <div class="form_field">
+                        <input type="password" placeholder="Password" class="form_input" />
+                    </div>
+                    
+                    <button class="btn" type="button" onclick="redirect()">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,193 @@
+
+  
+  
+  .result{
+      margin-left: 40%;
+      margin-top: 10%;
+  }
+  
+  .filter{
+    cursor: pointer;
+    float: left;
+    height: 5%;
+    width: 25%;
+    position: fixed;
+    
+    top: 15%;
+    left: 2%;
+    text-align: center;
+    background-color: darkturquoise;
+    color: white;
+    padding-top: 1%;
+    border: 2px double rgba(181, 179, 179, 0.612);
+   
+  }
+
+.filter:hover{
+ background-color: rgb(255, 255, 255);
+ color:  darkturquoise;
+}
+
+
+
+  /* Style the sidebar - fixed full height */
+.sidebar {
+    display: none;
+  
+   
+  }
+  
+  /* Style sidebar links */
+  .sidebar p {
+    display: none;
+  
+  }
+
+  #submit {
+    display: none;
+   
+    
+  }
+ 
+  
+  /* Style the main content */
+  .main {
+      
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+  }
+  
+
+
+    .cardsbox{
+    margin-left: 25%;
+    margin-top: 15%;
+    }
+  .card {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 70%;
+    border: 1px double rgba(181, 179, 179, 0.612);
+   margin-left: 10%;
+   margin-top: 5%;
+    text-align: center;
+    font-family: arial;
+    display: inline-block;
+  }
+ 
+ /* Navbar container */
+.navbar {
+   
+  overflow: hidden;
+  background-color:  #2196F3;
+  font-family: Arial;
+  position: fixed; 
+   top: 0; 
+   left: 0;
+   width: 100%; 
+   height: 10%;
+}
+
+
+.nb {
+  cursor: pointer;
+background-color: darkturquoise;
+color: white;
+float: left;
+display: block;
+text-align: center;
+padding: 14px 16px;
+margin-top: 0.5%;
+text-decoration: none;
+  
+}
+.name {
+  cursor: pointer;
+  color:  rgb(87, 87, 87);
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  margin-top: 0.5%;
+  margin-right: 2%;
+  text-decoration: none;
+    
+  }
+.navbar input[type=text] {
+  float: center;
+  padding: 8px ;
+  border: none;
+  margin-top: 1.5%;
+  margin-left: 20px;
+  font-size: 17px;
+  width: 30%; 
+  border-radius: 8px;
+}
+.navbar img {
+  float:right;
+  margin-top: 2%;
+  margin-right: 2%;
+  border-radius: 50%;
+  width: 5%;
+}
+
+
+.cardsbox h3{
+  padding: 14px 16px;
+  margin-top: 10%;
+  margin-left: 3%;
+  color: rgb(99, 99, 99);
+  
+}
+
+.categories{
+display: none;
+}
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 50%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 25%;
+  left: 3%;
+  
+  background-color: rgb(255, 254, 254);
+  overflow-x: hidden;
+  padding-top: 1%;
+  border: 2px double rgba(181, 179, 179, 0.612);
+ 
+}
+
+
+#newdoc {
+  text-align: center;
+  margin-top: 25%;
+  color: white;
+  background-color:darkturquoise;
+  padding: 5%;
+  float:center;
+}
+
+
+/* Style the main content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+
+
+
+
+
+.card:hover {
+  
+  border-color: blue;
+}
+
+.macimage{
+  width: 100%;
+  max-height: 180px;
+  min-height: 180px;
+}

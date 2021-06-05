@@ -1,0 +1,5 @@
+The first page is Index.html
+When the user clicks on Sign Up or Sign In, they will be redirected to notebook.html
+which is essentially the Dashboard
+When the user clicks on New Document, they will be redirected to NewDoc.html
+which is the main editor window.
